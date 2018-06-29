@@ -1,0 +1,41 @@
+{
+    "name": "web-log-js",
+    "version": "0.0.1",
+    "description": "work in with web-log-server to save web log to server",
+    "keywords": [
+        "web-log"
+    ],
+    "license": "MIT",
+    "engines": {
+        "node": ">=6"
+    },
+    "dependencies": {
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:yanxianliang/web-log-js.git"
+    },
+    "main": "./lib/index",
+    "module": "./es/index",
+    "scripts": {
+        "start": "react-scripts-ts start",
+        "build": "react-scripts-ts build",
+        "test": "react-scripts-ts test --env=jsdom",
+        "eject": "react-scripts-ts eject",
+        "prepublish": "rc-tools run guard",
+        "pub": "rc-tools run pub --babel-runtime",
+        "compile":"rc-tools run compile"
+    },
+    "files": [
+        "lib",
+        "es",
+        "dist"
+    ],
+    "devDependencies": {
+        "@types/node": "^10.3.2",
+        "typescript": "^2.9.1",
+        "rc-tools":"^8.0.1",
+        "crypto-js":"^3.1.9-1",
+        "@types/crypto-js":"^3.1.41"
+    }
+}
