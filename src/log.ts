@@ -38,42 +38,42 @@ class Log{
         if(this.production){
             this.sendToServer("trace",content.join(" "));
         }else{
-            logger.log(`%c${content.join(" ")}%c`,'color:blue');
+            logger.log(`%c${content.join(" ")}`,'color:blue');
         }
     }
     static debug(...content:string[]){
         if(this.production){
             this.sendToServer("debug",content.join(" "));
         }else{
-            logger.log(`%c${content.join(" ")}%c`,'color:cyan');
+            logger.log(`%c${content.join(" ")}`,'color:cyan');
         }
     }
     static info(...content:string[]){
         if(this.production){
             this.sendToServer("info",content.join(" "));
         }else{
-            logger.log(`%c${content.join(" ")}%c`,'color:green');
+            logger.log(`%c${content.join(" ")}`,'color:green');
         }
     }
     static warn(...content:string[]){
         if(this.production){
             this.sendToServer("warn",content.join(" "));
         }else{
-            logger.log(`%c${content.join(" ")}%c`,'color:yellow');
+            logger.log(`%c${content.join(" ")}`,'color:yellow');
         }
     }
     static error(...content:string[]){
         if(this.production){
             this.sendToServer("error",content.join(" "));
         }else{
-            logger.log(`%c${content.join(" ")}%c`,'color:red');
+            logger.log(`%c${content.join(" ")}`,'color:red');
         }
     }
     static fatal(...content:string[]){
         if(this.production){
             this.sendToServer("fatal",content.join(" "));
         }else{
-            logger.log(`%c${content.join(" ")}%c`,'color:magenta');
+            logger.log(`%c${content.join(" ")}`,'color:magenta');
         }
     }
 }
