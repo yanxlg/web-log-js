@@ -78,8 +78,8 @@ class Log{
     }
 }
 
-window.onerror=function(errorMessage, scriptURI, lineNumber,columnNumber,errorObj) {
-    const {message="",name="",stack=""}=errorObj||{};
+window.onerror=function() {
+    const {message="",name="",stack=""}=arguments[4]||{};
     Log.error(message,name,stack);
 };
 // window.console=Log;

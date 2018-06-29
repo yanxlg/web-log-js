@@ -1,6 +1,6 @@
 {
-    "name": "web-log-js",
-    "version": "0.0.1",
+    "name": "@yanxlg/web-log-js",
+    "version": "0.0.2",
     "description": "work in with web-log-server to save web log to server",
     "keywords": [
         "web-log"
