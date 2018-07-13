@@ -34,44 +34,50 @@ class Log{
             content:content
         }),this.key)}`;
     }
+    private static toString(...content:any[]){
+        const _content = content.map((con:string|object)=>{
+            return typeof(con) == 'string'?con:JSON.stringify(con);
+        });
+        return _content.join(" ");
+    };
     static trace(...content:string[]){
         if(this.production){
-            this.sendToServer("trace",content.join(" "));
+            this.sendToServer("trace",this.toString(content));
         }else{
             logger.log(`%c${content.join(" ")}`,'color:blue');
         }
     }
     static debug(...content:string[]){
         if(this.production){
-            this.sendToServer("debug",content.join(" "));
+            this.sendToServer("debug",this.toString(content));
         }else{
             logger.log(`%c${content.join(" ")}`,'color:cyan');
         }
     }
     static info(...content:string[]){
         if(this.production){
-            this.sendToServer("info",content.join(" "));
+            this.sendToServer("info",this.toString(content));
         }else{
             logger.log(`%c${content.join(" ")}`,'color:green');
         }
     }
     static warn(...content:string[]){
         if(this.production){
-            this.sendToServer("warn",content.join(" "));
+            this.sendToServer("warn",this.toString(content));
         }else{
             logger.log(`%c${content.join(" ")}`,'color:yellow');
         }
     }
     static error(...content:string[]){
         if(this.production){
-            this.sendToServer("error",content.join(" "));
+            this.sendToServer("error",this.toString(content));
         }else{
             logger.log(`%c${content.join(" ")}`,'color:red');
         }
     }
     static fatal(...content:string[]){
         if(this.production){
-            this.sendToServer("fatal",content.join(" "));
+            this.sendToServer("fatal",this.toString(content));
         }else{
             logger.log(`%c${content.join(" ")}`,'color:magenta');
         }
