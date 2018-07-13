@@ -88,6 +88,10 @@ window.onerror=function() {
     const {message="",name="",stack=""}=arguments[4]||{};
     Log.error(message,name,stack);
 };
+
+window.addEventListener("unhandledrejection",function(event:any) {
+    Log.error(event.reason);
+});
 // window.console=Log;
 
 export {Log};
