@@ -4,7 +4,7 @@
  * @author:yanxinaliang
  * @time：2018/6/29 11:23
  */
-import {Crypto} from "./crypto";
+import {Crypto,Base64Util} from "./crypto";
 
 const logger=window["console"];
 
@@ -23,16 +23,16 @@ class Log{
         this.appId=appId;
         this.key=key;
     }
-    private static sendToServer(level:string,content:string,){
+    private static sendToServer(level:string,content:string){
         if(!this.appId||!this.key){
             alert("请配置appId及appKey");
             return;
         }
         const image = new Image();
-        image.src=`${this.host}/favicon.png?k=${this.appId}&d=${Crypto.encrypt(JSON.stringify({
+        image.src=`${this.host}/favicon.png?k=${this.appId}&d=${Crypto.encrypt(Base64Util.stringify(JSON.stringify({
             level:level,
             content:content
-        }),this.key)}`;
+        })),this.key)}`;
     }
     private static toString(...content:any[]){
         const _content = content.map((con:string|object)=>{
