@@ -34,7 +34,7 @@ class Log{
             content:content
         })),this.key)}`;
     }
-    private static toString(...content:any[]){
+    private static toString(content:any[]){
         const _content = content.map((con:string|object)=>{
             return typeof(con) == 'string'?con:JSON.stringify(con);
         });
