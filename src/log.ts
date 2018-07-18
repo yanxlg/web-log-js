@@ -29,10 +29,10 @@ class Log{
             return;
         }
         const image = new Image();
-        image.src=`${this.host}/favicon.png?k=${this.appId}&d=${Crypto.encrypt(Base64Util.stringify(JSON.stringify({
+        image.src=`${this.host}/favicon.png?k=${this.appId}&d=${Base64Util.stringify(Crypto.encrypt(JSON.stringify({
             level:level,
             content:content
-        })),this.key)}`;
+        }),this.key))}`;
     }
     private static toString(content:any[]){
         const _content = content.map((con:string|object)=>{
